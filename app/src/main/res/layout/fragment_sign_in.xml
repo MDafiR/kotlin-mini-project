@@ -19,6 +19,7 @@
         android:text="Email Address" />
 
     <EditText
+        android:id="@+id/emailInput"
         style="@style/EditText.PoppinsRegular14sp8D92A3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,6 +37,7 @@
         android:text="Password" />
 
     <EditText
+        android:id="@+id/passwordInput"
         style="@style/EditText.PoppinsRegular14sp8D92A3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
