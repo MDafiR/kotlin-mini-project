@@ -9,10 +9,7 @@ import org.json.JSONObject
 import retrofit2.HttpException
 
 class SignInPresenter (private val view: SignInContract.View): SignInContract.Presenter {
-    private val mCompositeDisposable: CompositeDisposable?
-    init {
-        this.mCompositeDisposable = CompositeDisposable()
-    }
+    private val mCompositeDisposable: CompositeDisposable = CompositeDisposable()
 
     override fun submitLogin(email: String, password: String) {
         view.showLoading()
@@ -49,7 +46,7 @@ class SignInPresenter (private val view: SignInContract.View): SignInContract.Pr
                     }
                 }
             )
-        mCompositeDisposable!!.add(disposable)
+        mCompositeDisposable.add(disposable)
     }
 
     override fun subscribe() {
@@ -57,7 +54,7 @@ class SignInPresenter (private val view: SignInContract.View): SignInContract.Pr
     }
 
     override fun unSubscribe() {
-        mCompositeDisposable!!.clear()
+        mCompositeDisposable.clear()
     }
 
 }

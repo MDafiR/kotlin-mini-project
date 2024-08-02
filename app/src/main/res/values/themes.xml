@@ -7,6 +7,12 @@
 
     <style name="Theme.FoodMarket" parent="Base.Theme.FoodMarket" />
 
+    <style name="Theme.FoodMarket.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/primary</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_logo_apps</item>
+        <item name="postSplashScreenTheme">@style/Theme.FoodMarket</item>
+    </style>
+
     <style name="TextView"/>
 
     <style name="TextView.PoppinsMedium32sp020202">

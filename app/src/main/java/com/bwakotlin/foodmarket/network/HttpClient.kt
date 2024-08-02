@@ -1,6 +1,7 @@
 package com.bwakotlin.foodmarket.network
 
 import com.bwakotlin.foodmarket.BuildConfig
+import com.bwakotlin.foodmarket.FoodMarket
 import com.bwakotlin.foodmarket.utils.Helpers
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -35,14 +36,14 @@ class HttpClient {
     }
 
     private fun buildRetrofitClient() {
-        val token = ""
+        val token = FoodMarket.getApp().getToken()
         buildRetrofitClient(token)
     }
 
-    fun buildRetrofitClient(token: String) {
+    fun buildRetrofitClient(token: String?) {
         val builder = OkHttpClient.Builder()
-        builder.connectTimeout(2, TimeUnit.MINUTES)
-        builder.readTimeout(2, TimeUnit.MINUTES)
+        builder.connectTimeout(30, TimeUnit.SECONDS)
+        builder.readTimeout(30, TimeUnit.SECONDS)
 
         if (BuildConfig.DEBUG) {
             val interceptor = HttpLoggingInterceptor()

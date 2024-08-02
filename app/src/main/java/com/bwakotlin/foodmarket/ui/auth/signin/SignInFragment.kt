@@ -20,6 +20,7 @@ class SignInFragment : Fragment(), SignInContract.View {
 
     lateinit var presenter: SignInPresenter
     var progressDialog: Dialog? = null
+
     private var _binding: FragmentSignInBinding? = null
     private val binding get() = _binding!!
 
@@ -37,7 +38,7 @@ class SignInFragment : Fragment(), SignInContract.View {
         if (!FoodMarket.getApp().getToken().isNullOrEmpty()) {
             val home = Intent(activity, MainActivity::class.java)
             startActivity(home)
-            activity?.finish()
+            activity?.finishAffinity()
         }
 
         initView()
@@ -49,8 +50,8 @@ class SignInFragment : Fragment(), SignInContract.View {
         }
 
         binding.btnSignIn.setOnClickListener {
-            var email = binding.emailInput.text.toString()
-            var password = binding.passwordInput.text.toString()
+            val email = binding.emailInput.text.toString()
+            val password = binding.passwordInput.text.toString()
 
             if (email.isEmpty()) {
                 binding.emailInput.error = "Silakan masukkan email Anda"
@@ -78,7 +79,7 @@ class SignInFragment : Fragment(), SignInContract.View {
 
         val home = Intent(activity, MainActivity::class.java)
         startActivity(home)
-        activity?.finish()
+        activity?.finishAffinity()
     }
 
     override fun onLoginFailed(message: String) {

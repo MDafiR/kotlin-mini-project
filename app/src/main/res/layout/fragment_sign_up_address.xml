@@ -22,6 +22,7 @@
             android:text="Phone No." />
 
         <EditText
+            android:id="@+id/phoneNumberInput"
             style="@style/EditText.PoppinsRegular14sp8D92A3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,6 +40,7 @@
             android:text="Address" />
 
         <EditText
+            android:id="@+id/addressInput"
             style="@style/EditText.PoppinsRegular14sp8D92A3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,6 +58,7 @@
             android:text="House No." />
 
         <EditText
+            android:id="@+id/houseNumberInput"
             style="@style/EditText.PoppinsRegular14sp8D92A3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -73,6 +76,7 @@
             android:text="City" />
 
         <EditText
+            android:id="@+id/cityInput"
             style="@style/EditText.PoppinsRegular14sp8D92A3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

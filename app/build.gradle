@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -36,7 +37,7 @@ android {
     productFlavors {
         dev {
             applicationId = "com.bwakotlin.foodmarket.dev"
-            buildConfigField "String", "BASE_URL", "\"http://192.168.5.26:8000/\""
+            buildConfigField "String", "BASE_URL", "\"http://192.168.5.20:8000/\""
         }
     }
 
@@ -56,6 +57,7 @@ dependencies {
     implementation libs.androidx.navigation.ui.ktx
     implementation libs.androidx.lifecycle.livedata.ktx
     implementation libs.androidx.lifecycle.viewmodel.ktx
+    implementation libs.glide
     implementation libs.retrofit2.adapter.rxjava2
     implementation libs.okhttp3.logging.interceptor
     implementation libs.rxjava2.rxandroid
@@ -65,6 +67,8 @@ dependencies {
     implementation libs.android.lottie
     implementation libs.androidx.multidex
     implementation libs.androidx.preference.ktx
+    implementation libs.imagepicker
+    implementation libs.androidx.core.splashscreen
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
